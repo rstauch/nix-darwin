@@ -1,5 +1,4 @@
 {pkgs, ...}: let
-  PROJECT_ROOT = builtins.toString ./../../.;
 in {
   home.stateVersion = "22.11";
 
@@ -40,10 +39,8 @@ in {
       shellAliases = {
         ls = "ls --color=auto -F";
 
-        nixswitch = "darwin-rebuild switch --flake ${PROJECT_ROOT}/.#";
-
-        # scheint nur aus vscode terminal in projekt verzeichnis zu funktionieren ?
-        nixup = "pushd ${PROJECT_ROOT}; nix flake update; nixswitch; popd";
+        nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.#";
+        nixup = "pushd ~/projects/int/nix; nix flake update; nixswitch; popd";
       };
     };
   };
