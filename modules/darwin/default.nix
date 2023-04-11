@@ -24,7 +24,6 @@
   system.keyboard.remapCapsLockToEscape = true;
   security.pam.enableSudoTouchIdAuth = true;
 
-  # TODO: install and use nerdfonts
   fonts.fontDir.enable = true; # DANGER
   fonts.fonts = with pkgs; [
     nerdfonts
@@ -39,6 +38,7 @@
     finder.AppleShowAllExtensions = true;
     finder._FXShowPosixPathInTitle = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
+    NSGlobalDomain.AppleShowAllFiles = true;
 
     # keyboard
     NSGlobalDomain.InitialKeyRepeat = 14;
@@ -48,7 +48,13 @@
     NSGlobalDomain."com.apple.swipescrolldirection" = false;
 
     # Other
-    # TODO: spellcheck, smart-quotes, smart-dash, darkmode, tinting = true tone
+    NSGlobalDomain.AppleInterfaceStyle = "Dark"; # darkmode
+    NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false; # spellcheck
+    NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false; # smart-dash
+    NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false; # smart-quotes
+    NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
+
+    # TODO: tinting = true tone, right click tap
   };
 
   system.stateVersion = 4;

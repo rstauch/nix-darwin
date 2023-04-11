@@ -7,6 +7,8 @@
     "nixpkgs"
   ];
 in {
+  # TODO: use nerdfonts
+
   getUserSettings = {
     terminal.integrated.fontSize = 14;
     security.workspace.trust.enabled = false;

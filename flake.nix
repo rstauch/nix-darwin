@@ -32,6 +32,7 @@
             useUserPackages = true;
             users.rstauch.imports = [
               ./modules/home-manager
+              ./modules/home-manager/zsh
               ./modules/home-manager/vscode
             ];
           };
