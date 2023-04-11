@@ -7,6 +7,12 @@ in {
     fd
     curl
     less
+    exa
+
+    # see https://determinate.systems/posts/nix-home-env
+    direnv
+    # see https://determinate.systems/posts/nix-direnv
+    nix-direnv
   ];
   home.sessionVariables = {
     PAGER = "less";
@@ -15,18 +21,6 @@ in {
 
   # TODO: vollständige config einführen
   programs = {
-    bat = {
-      enable = true;
-      config.theme = "TwoDark";
-    };
-
-    fzf = {
-      enable = true;
-      enableZshIntegration = true;
-    };
-
-    exa.enable = true;
-
     git = {
       enable = true;
     };
