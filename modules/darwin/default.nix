@@ -12,7 +12,7 @@
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
-    systemPackages = [pkgs.coreutils pkgs.jq];
+    systemPackages = [pkgs.coreutils pkgs.iterm2];
     systemPath = ["/opt/homebrew/bin"];
     pathsToLink = ["/Applications"];
   };
