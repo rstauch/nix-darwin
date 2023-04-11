@@ -35,7 +35,7 @@ in {
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;
-    # would replace the cd command (doesn't work on Nushell / POSIX shells).
+    # replace cd command
     options = ["--cmd cd"];
   };
 
@@ -60,6 +60,9 @@ in {
       zstyle ':fzf-tab:complete:(bat|cat|less):*' fzf-preview '${pkgs.lib.getExe pkgs.bat} --color=always --style=numbers --line-range=:1000 $realpath'
 
       eval "$(direnv hook zsh)"
+
+      # only relevant if iterm2 shell integration was triggered
+      source "$HOME/.iterm2_shell_integration.zsh"
     '';
     autocd = true;
 
