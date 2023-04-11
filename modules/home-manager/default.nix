@@ -13,6 +13,11 @@ in {
     direnv
     # see https://determinate.systems/posts/nix-direnv
     nix-direnv
+
+    jq
+    just
+    openssl
+    openssh
   ];
   home.sessionVariables = {
     GIT_PAGER = "";
