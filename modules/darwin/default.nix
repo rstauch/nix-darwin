@@ -1,8 +1,8 @@
 {pkgs, ...}: {
-  nix.binaryCaches = [
+  nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
-  nix.binaryCachePublicKeys = [
+  nix.settings.trusted-public-keys = [
     "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
   ];
   programs.nix-index.enable = true;
@@ -25,8 +25,10 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   # TODO: install and use nerdfonts
-  # fonts.fontDir.enable = true; # DANGER
-  # fonts.fonts = [ (pkgs.nerdfonts.override { fonts = [ "Meslo" ]; }) ];
+  fonts.fontDir.enable = true; # DANGER
+  fonts.fonts = with pkgs; [
+    nerdfonts
+  ];
 
   services.nix-daemon.enable = true;
   system.defaults = {
@@ -57,7 +59,7 @@
     global.brewfile = true;
     masApps = {};
     casks = [
-      "linearmouse" # manual: grant permissions & enable start automatically at login, /Users/rstauch/.config/linearmouse/linearmouse.json
+      "linearmouse" # manual: grant permissions & enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions"];
   };
