@@ -6,14 +6,13 @@
         fd
         curl
         less
-        vscode
     ];
     home.sessionVariables = {
         PAGER = "less";
         CLICLOLOR = 1;
-        EDITOR = "code";
     };
 
+    # TODO: groupierung auf programs.x ebene
     programs.bat.enable = true;
     programs.bat.config.theme = "TwoDark";
     programs.fzf.enable = true;
@@ -26,6 +25,8 @@
     programs.zsh.enableSyntaxHighlighting = true;
     programs.zsh.shellAliases = {
         ls = "ls --color=auto -F";
+
+        # TODO: set path programatically
         nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.#";
         nixup = "pushd ~/projects/int/nix; nix flake update; nixswitch; popd";
     };

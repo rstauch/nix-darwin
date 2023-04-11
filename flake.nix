@@ -1,8 +1,6 @@
 {
   description = "my minimal flake";
   inputs = {
-    # Where we get most of our software. Giant mono repo with recipes
-    # called derivations that say how to build software.
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # nixos-22.11
   
     # Manages configs links things into your home directory
@@ -24,7 +22,10 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.rstauch.imports = [ ./modules/home-manager ];
+            users.rstauch.imports = [ 
+              ./modules/home-manager 
+               ./modules/home-manager/vscode
+              ];
           };
         }
       ];

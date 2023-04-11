@@ -34,7 +34,18 @@
     NSGlobalDomain."com.apple.swipescrolldirection" = false;
 
     # Other
+    # TODO: spellcheck, smart-quotes, smart-dash, darkmode
   };
   
   system.stateVersion = 4;
+
+    # homebrew = {
+        # enable = true;
+        # caskArgs.no_quarantine = true;
+        # global.brewfile = true;
+        # masApps = { };
+        # casks = [ "raycast" "amethyst" ];
+        # taps = [ "fujiapple852/trippy" ];
+        # brews = [ "trippy" ];
+    # };
 }
