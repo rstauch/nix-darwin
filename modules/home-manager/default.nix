@@ -15,14 +15,16 @@ in {
     nix-direnv
   ];
   home.sessionVariables = {
-    PAGER = "less";
+    GIT_PAGER = "";
+    PAGER = "${pkgs.less}/bin/less -RF --mouse --wheel-lines=3";
     CLICLOLOR = 1;
   };
 
-  # TODO: vollständige config einführen
   programs = {
     git = {
       enable = true;
+      userName = "Robert Stauch";
+      userEmail = "robert.stauch@fluxdev.de";
     };
   };
 }
