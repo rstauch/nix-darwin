@@ -1,3 +1,4 @@
+# https://rycee.gitlab.io/home-manager/options.html
 {pkgs, ...}: let
 in {
   home.stateVersion = "22.11";

@@ -1,3 +1,4 @@
+# https://daiderd.com/nix-darwin/manual/index.html
 {pkgs, ...}: {
   nix.settings.substituters = [
     "https://cache.nixos.org/"
@@ -55,6 +56,9 @@
     NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
 
     # TODO: tinting = true tone, right click tap
+
+    # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+    # https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
   };
 
   system.stateVersion = 4;
@@ -65,7 +69,8 @@
     global.brewfile = true;
     masApps = {};
     casks = [
-      "linearmouse" # manual: grant permissions & enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
+      "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
+      "raycast"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions"];
   };
