@@ -13,7 +13,12 @@
   environment = {
     shells = with pkgs; [bash zsh];
     loginShell = pkgs.zsh;
-    systemPackages = [pkgs.coreutils pkgs.iterm2];
+
+    systemPackages = with pkgs; [
+      coreutils
+      iterm2
+    ];
+
     systemPath = ["/opt/homebrew/bin"];
     pathsToLink = ["/Applications"];
   };
@@ -70,7 +75,10 @@
     masApps = {};
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
-      "raycast"
+      "raycast" # pot. binary settings ins homeverzeichnis legen und entsprechend manuell importieren
+      "1password"
+      "1password-cli"
+      "firefox" # manual: login to sync settings, install addons: uBlockOrigin, darkreader, ?1password?
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions"];
   };
