@@ -1,5 +1,6 @@
 # https://daiderd.com/nix-darwin/manual/index.html
-{pkgs, ...}: {
+{pkgs, ...}: let
+in {
   nix.settings.substituters = [
     "https://cache.nixos.org/"
   ];
@@ -70,6 +71,10 @@
 
   homebrew = {
     enable = true;
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+    };
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = {};

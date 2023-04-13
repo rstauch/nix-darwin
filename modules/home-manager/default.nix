@@ -1,5 +1,11 @@
 # https://rycee.gitlab.io/home-manager/options.html
-{pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
+  darwinSockPath = "/Users/rstauch/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+  sockPath = "/Users/rstauch/.1password/agent.sock";
 in {
   home.stateVersion = "22.11";
 
@@ -24,13 +30,27 @@ in {
     GIT_PAGER = "";
     PAGER = "${pkgs.less}/bin/less -RF --mouse --wheel-lines=3";
     CLICLOLOR = 1;
+    SSH_AUTH_SOCK = sockPath;
   };
 
   programs = {
     git = {
+      # TODO: ggf. commit signing aktivieren ?
       enable = true;
       userName = "Robert Stauch";
       userEmail = "robert.stauch@fluxdev.de";
     };
+
+    ssh = {
+      enable = true;
+      extraConfig = ''
+        IdentityAgent "${sockPath}"
+      '';
+    };
+  };
+
+  home.file.sock = {
+    source = config.lib.file.mkOutOfStoreSymlink darwinSockPath;
+    target = ".1password/agent.sock";
   };
 }
