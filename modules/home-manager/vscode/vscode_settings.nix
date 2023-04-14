@@ -10,7 +10,7 @@ in {
   # TODO: use nerdfonts
 
   getUserSettings = {
-    terminal.integrated.fontSize = 14;
+    terminal.integrated.fontSize = 12;
     security.workspace.trust.enabled = false;
     extensions.autoCheckUpdates = false;
     extensions.autoUpdate = false;

@@ -77,13 +77,14 @@ in {
     };
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    masApps = {};
+    masApps = {}; # TODO: install 1password for safari
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
       "raycast" # pot. binary settings ins homeverzeichnis legen und entsprechend manuell importieren
       "1password"
       "1password-cli"
-      "firefox" # manual: login to sync settings, install addons: uBlockOrigin, darkreader, ?1password?
+      "firefox" # manual: login to sync settings, install addons: uBlockOrigin, darkreader, 1password
+      "google-chrome"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions"];
   };
