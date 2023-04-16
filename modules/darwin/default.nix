@@ -61,7 +61,7 @@ in {
     NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false; # smart-quotes
     NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
 
-    # TODO: tinting = true tone, right click tap
+    # TODO: tinting = true tone, right click tap, highres
 
     # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
     # https://pawelgrzybek.com/change-macos-user-preferences-via-command-line/
@@ -85,6 +85,7 @@ in {
       "1password-cli"
       "firefox" # manual: login to sync settings, install addons: uBlockOrigin, darkreader, 1password
       "google-chrome"
+      "docker"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];
