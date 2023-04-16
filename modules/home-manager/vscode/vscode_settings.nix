@@ -10,6 +10,10 @@ in {
   # TODO: use nerdfonts
 
   getUserSettings = {
+    # unklar ob terminal werte funktionieren
+    terminal.external.osxExec = pkgs.lib.getExe pkgs.iterm2;
+    terminal.explorerKind = "external";
+
     terminal.integrated.fontSize = 12;
     security.workspace.trust.enabled = false;
     extensions.autoCheckUpdates = false;

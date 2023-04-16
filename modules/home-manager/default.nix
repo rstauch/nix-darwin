@@ -6,7 +6,15 @@
 }: let
   darwinSockPath = "/Users/rstauch/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
   sockPath = "/Users/rstauch/.1password/agent.sock";
+
+  java = import ./java17.nix {
+    inherit pkgs;
+  };
+
+  imports = [java];
 in {
+  inherit imports;
+
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
