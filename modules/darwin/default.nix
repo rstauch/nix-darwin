@@ -86,6 +86,7 @@ in {
       "firefox" # manual: login to sync settings, install addons: uBlockOrigin, darkreader, 1password
       "google-chrome"
     ];
-    taps = ["homebrew/cask" "homebrew/cask-versions"];
+    taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
+    brews = ["jbang" "quarkus"];
   };
 }
