@@ -91,10 +91,11 @@ in {
 
   # vermutlich nicht der richtige ort, da Settings zwar geschrieben werden aber nicht greifen!
   system.activationScripts.postActivation.text = ''
-    echo "Start setting up post activation settings ..."
+    #echo "Start setting up post activation settings ..."
 
-    # defaults write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
-    # defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
+    #defaults write NSGlobalDomain CGDisableCursorLocationMagnification -int 0
+    #defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 0
+    # defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 0
 
     # TODO: Trackpad settings scheinen nicht zu funktionieren: evtl via parallels vm rausfinden
     # defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
@@ -114,7 +115,7 @@ in {
 
     # defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
-    echo "Finished setting up post activation settings!"
+    #echo "Finished setting up post activation settings!"
   '';
 
   system.stateVersion = 4;
