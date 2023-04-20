@@ -89,11 +89,17 @@ in {
   # Disable the “Are you sure you want to open this application?” dialog
   system.defaults.LaunchServices.LSQuarantine = false;
 
+  # vermutlich nicht der richtige ort, da Settings zwar geschrieben werden aber nicht greifen!
   system.activationScripts.postActivation.text = ''
     echo "Start setting up post activation settings ..."
-    # TODO: add and test settings
 
-    # TODO: Trackpad settings scheinen nicht zu funktionieren
+    # defaults write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
+    # defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
+
+    # TODO: Trackpad settings scheinen nicht zu funktionieren: evtl via parallels vm rausfinden
+    # defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+    # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
+
     # check with: defaults read com.apple.AppleMultitouchTrackpad
     # Tap to click for this user and for the login screen
     # defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
