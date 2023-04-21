@@ -25,6 +25,7 @@ in {
     systemPackages = with pkgs; [
       coreutils
       iterm2
+      wget
     ];
 
     systemPath = ["/opt/homebrew/bin"];
@@ -116,6 +117,7 @@ in {
     global.brewfile = true;
     masApps = {
       "1Password for Safari" = 1569813296;
+      # "Parallels Desktop" = 1085114709; # TODO: scheinbar "komische" Version, von Hand bzw. mal mit HomeBrew probieren
     };
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
@@ -126,7 +128,8 @@ in {
       "google-chrome"
       "docker" # manual: enable start automatically at login
       "shottr"
-      "notion"
+      "notion" # manual: login to project space
+      "caffeine" # manual: settings
       # "betterdisplay" # TODO: requires PAID license
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
