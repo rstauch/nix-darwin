@@ -49,7 +49,6 @@ in {
       tilesize = 64;
     };
     finder = {
-      # ???: CreateDesktop = false;
       ShowPathbar = true;
       ShowStatusBar = true;
       AppleShowAllFiles = true;
@@ -72,24 +71,26 @@ in {
     NSGlobalDomain."com.apple.swipescrolldirection" = false;
 
     # Other
-    NSGlobalDomain.AppleInterfaceStyle = "Dark"; # darkmode
-    NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false; # spellcheck
-    NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false; # smart-dash
-    NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false; # smart-quotes
+    NSGlobalDomain.AppleInterfaceStyle = "Dark";
+
+    # disable spelling correction etc
+    NSGlobalDomain.NSAutomaticSpellingCorrectionEnabled = false;
+    NSGlobalDomain.NSAutomaticDashSubstitutionEnabled = false;
+    NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
     NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
     NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
 
     CustomSystemPreferences = {
       NSGlobalDomain = {
         # scheint nicht zu greifen/funktionieren ?
-        # CGDisableCursorLocationMagnification = 1;
+        # "CGDisableCursorLocationMagnification" = 1;
       };
     };
 
     CustomUserPreferences = {
       NSGlobalDomain = {
         # scheint nicht zu greifen/funktionieren ?
-        # CGDisableCursorLocationMagnification = 1;
+        # "CGDisableCursorLocationMagnification" = 1;
       };
     };
 
@@ -103,35 +104,6 @@ in {
   # Disable the “Are you sure you want to open this application?” dialog
   system.defaults.LaunchServices.LSQuarantine = false;
 
-  # vermutlich nicht der richtige ort, da Settings zwar geschrieben werden aber nicht greifen!
-  # system.activationScripts.postActivation.text = ''
-  #echo "Start setting up post activation settings ..."
-
-  # defaults write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
-  # defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 1
-  # defaults -currentHost write NSGlobalDomain CGDisableCursorLocationMagnification -int 0
-
-  # TODO: Trackpad settings scheinen nicht zu funktionieren: evtl via parallels vm rausfinden
-  # defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-  # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-
-  # check with: defaults read com.apple.AppleMultitouchTrackpad
-  # Tap to click for this user and for the login screen
-  # defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-
-  # defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-  # defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-  # Map bottom right corner to right-click
-  # defaults write com.apple.AppleMultitouchTrackpad TrackpadCornerSecondaryClick -int 2
-  # defaults write com.apple.AppleMultitouchTrackpad TrackpadRightClick -bool false
-  # defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClickBehavior -int 1
-
-  # defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
-
-  #echo "Finished setting up post activation settings!"
-  #'';
-
   system.stateVersion = 4;
 
   homebrew = {
@@ -142,7 +114,9 @@ in {
     };
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    masApps = {}; # TODO: install 1password for safari
+    masApps = {
+      "1Password for Safari" = 1569813296;
+    };
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
       "raycast" # pot. binary settings ins homeverzeichnis legen und entsprechend manuell importieren
@@ -152,7 +126,8 @@ in {
       "google-chrome"
       "docker" # manual: enable start automatically at login
       "shottr"
-      # "betterdisplay" # TODO: requires license
+      "notion"
+      # "betterdisplay" # TODO: requires PAID license
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];
