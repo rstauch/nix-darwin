@@ -112,6 +112,11 @@ in {
         "colored-man-pages"
 
         "zoxide"
+
+        # mvnci = mvn clean install
+        # mvncist = mvn clean install -DskipTests
+        "mvn"
+
         # 1password
         # adb
         # aws
