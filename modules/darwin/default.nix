@@ -50,6 +50,10 @@ in {
       static-only = true;
       show-recents = false;
       minimize-to-application = true;
+      mineffect = "suck";
+
+      # Don’t animate opening applications from the Dock
+      launchanim = false;
 
       # TODO: Wert anpassen
       tilesize = 64;
@@ -60,6 +64,9 @@ in {
       AppleShowAllFiles = true;
       AppleShowAllExtensions = true;
       _FXShowPosixPathInTitle = true;
+
+      # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
+      QuitMenuItem = true;
     };
     loginwindow = {
       GuestEnabled = false;
@@ -85,6 +92,26 @@ in {
     NSGlobalDomain.NSAutomaticQuoteSubstitutionEnabled = false;
     NSGlobalDomain.NSAutomaticPeriodSubstitutionEnabled = false;
     NSGlobalDomain.NSAutomaticCapitalizationEnabled = false;
+    NSGlobalDomain.AppleMeasurementUnits = "Centimeters";
+    NSGlobalDomain.AppleMetricUnits = 1;
+    NSGlobalDomain.AppleTemperatureUnit = "Celsius";
+    NSGlobalDomain.NSWindowResizeTime = 0.001;
+
+    # Enable full keyboard access for all controls
+    # (e.g. enable Tab in modal dialogs)
+    NSGlobalDomain.AppleKeyboardUIMode = 3;
+
+    # Expand save panel by default
+    NSGlobalDomain.NSNavPanelExpandedStateForSaveMode = true;
+    NSGlobalDomain.NSNavPanelExpandedStateForSaveMode2 = true;
+    # Expand print panel by default
+    NSGlobalDomain.PMPrintingExpandedStateForPrint = true;
+    NSGlobalDomain.PMPrintingExpandedStateForPrint2 = true;
+
+    ## unklar ob effekt
+    # Trackpad: enable right click on the bottom right of the trackpad
+    trackpad.TrackpadRightClick = true;
+    NSGlobalDomain.AppleFontSmoothing = 2;
 
     CustomSystemPreferences = {
       NSGlobalDomain = {
