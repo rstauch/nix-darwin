@@ -46,6 +46,11 @@ in {
     dock = {
       autohide = false;
 
+      ## only active windows in dock
+      static-only = true;
+      show-recents = false;
+      minimize-to-application = true;
+
       # TODO: Wert anpassen
       tilesize = 64;
     };
@@ -131,6 +136,8 @@ in {
       "notion" # manual: login to project space
       "caffeine" # manual: settings
       # "betterdisplay" # TODO: requires PAID license
+      "disk-inventory-x"
+      # "parallels" # mac store version ist beschränkt ?
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];
