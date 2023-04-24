@@ -65,6 +65,14 @@ in {
       AppleShowAllExtensions = true;
       _FXShowPosixPathInTitle = true;
 
+      # list view
+      FXPreferredViewStyle = "Nlsv";
+
+      # search dir
+      FXDefaultSearchScope = "SCcf";
+
+      FXEnableExtensionChangeWarning = false;
+
       # Finder: allow quitting via ⌘ + Q; doing so will also hide desktop icons
       QuitMenuItem = true;
     };
