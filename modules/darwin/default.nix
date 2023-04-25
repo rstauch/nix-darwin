@@ -157,7 +157,6 @@ in {
     global.brewfile = true;
     masApps = {
       "1Password for Safari" = 1569813296;
-      # "Parallels Desktop" = 1085114709; # TODO: scheinbar "komische" Version, von Hand bzw. mal mit HomeBrew probieren
     };
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
@@ -173,6 +172,7 @@ in {
       # "betterdisplay" # TODO: requires PAID license
       "disk-inventory-x"
       # "parallels" # mac store version ist beschränkt ?
+      "onedrive"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];
