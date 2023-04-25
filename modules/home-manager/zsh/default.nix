@@ -125,7 +125,8 @@ in {
         # docker-compose ?
         # gitflow ?
       ];
-      theme = "simple";
+      # theme = "simple";
+      theme = "agnoster";
     };
   };
 }
