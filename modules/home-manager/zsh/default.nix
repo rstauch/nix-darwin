@@ -44,7 +44,10 @@ in {
     enableCompletion = true;
     enableAutosuggestions = true;
     enableSyntaxHighlighting = true;
-
+    sessionVariables = {
+      # should disable path on the right hand side
+      RPROMPT = "";
+    };
     initExtra = ''
       unsetopt BEEP
       unsetopt LIST_BEEP
@@ -52,6 +55,9 @@ in {
       unsetopt notify # Don't print status of background jobs until a prompt is about to be printed
       setopt INC_APPEND_HISTORY
       setopt globdots
+
+      unset RPS1 RPROMPT
+
       # https://github.com/Freed-Wu/fzf-tab-source
       zstyle ':fzf-tab:complete:*' fzf-min-height 1000
       # preview directory's content with exa when completing cd
