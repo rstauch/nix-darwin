@@ -33,6 +33,8 @@ in {
     just
     openssl
     openssh
+
+    jetbrains.idea-ultimate
   ];
   home.sessionVariables = {
     GIT_PAGER = "";
