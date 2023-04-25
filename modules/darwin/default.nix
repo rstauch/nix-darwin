@@ -56,7 +56,7 @@ in {
       launchanim = false;
 
       # TODO: Wert anpassen
-      tilesize = 64;
+      tilesize = 48;
     };
     finder = {
       ShowPathbar = true;

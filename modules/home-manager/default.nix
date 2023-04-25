@@ -61,4 +61,6 @@ in {
     source = config.lib.file.mkOutOfStoreSymlink darwinSockPath;
     target = ".1password/agent.sock";
   };
+
+  home.file."Library/Application Support/iTerm2/DynamicProfiles/iterm2_profile.json".source = ./iterm2_profiles.json;
 }
