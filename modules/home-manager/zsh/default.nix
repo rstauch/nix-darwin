@@ -126,7 +126,9 @@ in {
         # gitflow ?
       ];
       # theme = "simple";
-      theme = "agnoster";
+      # theme = "agnoster";
+      custom = "${./themes}";
+      theme = "agnoster2";
     };
   };
 }
