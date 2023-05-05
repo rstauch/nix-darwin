@@ -55,7 +55,6 @@ in {
       # Don’t animate opening applications from the Dock
       launchanim = false;
 
-      # TODO: Wert anpassen
       tilesize = 48;
     };
     finder = {

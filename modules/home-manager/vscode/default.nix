@@ -14,6 +14,7 @@ in {
         kamadorueda.alejandra
         timonwong.shellcheck
         mhutchie.git-graph
+        alefragnani.project-manager
 
         # TODO: enable this
         # github.copilot
