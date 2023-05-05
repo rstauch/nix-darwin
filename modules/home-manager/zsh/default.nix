@@ -70,11 +70,16 @@ in {
       # only relevant if iterm2 shell integration was triggered
       source "$HOME/.iterm2_shell_integration.zsh"
     '';
+    sessionVariables = {DEFAULT_USER = "rstauch";};
     autocd = true;
 
     shellAliases = {
-      ls = "ls --color=auto -F";
+      # ls = "ls --color=auto -F";
+      l = "ls -lah --group-directories-first";
+      cls = "clear";
+      c = "clear";
 
+      # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
       nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.#";
       nixup = "pushd ~/projects/int/nix; nix flake update; nixswitch; popd";
     };
@@ -95,8 +100,9 @@ in {
           fetchFromGitHub {
             owner = "Aloxaf";
             repo = "fzf-tab";
-            rev = "69024c27738138d6767ea7246841fdfc6ce0d0eb";
-            sha256 = "sha256-yN1qmuwWNkWHF9ujxZq2MiroeASh+KQiCLyK5ellnB8=";
+            # bei revisions update sha256 auskommentieren und nixup ausführen um korrekten sha256 zu bekommen
+            rev = "5a81e13792a1eed4a03d2083771ee6e5b616b9ab";
+            sha256 = "sha256-dPe5CLCAuuuLGRdRCt/nNruxMrP9f/oddRxERkgm1FE=";
           };
       }
     ];
