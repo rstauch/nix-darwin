@@ -90,6 +90,12 @@ in {
     # Mouse
     NSGlobalDomain."com.apple.swipescrolldirection" = false;
 
+    # f-tasten
+    NSGlobalDomain."com.apple.keyboard.fnState" = true;
+
+    NSGlobalDomain."com.apple.sound.beep.volume" = 0.0;
+    NSGlobalDomain."com.apple.sound.beep.feedback" = 0;
+
     # Other
     NSGlobalDomain.AppleInterfaceStyle = "Dark";
 
@@ -172,6 +178,10 @@ in {
       "disk-inventory-x"
       # "parallels" # mac store version ist beschränkt ?
       "onedrive"
+
+      # "mutify" # TODO: paid <- https://apps.apple.com/us/app/mutify/id1510206330?mt=12
+      # "mic-drop" TODO: paid <- https://getmicdrop.com/
+      "microsoft-teams"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];
