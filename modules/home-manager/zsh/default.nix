@@ -74,7 +74,7 @@ in {
     autocd = true;
 
     shellAliases = {
-      # ls = "ls --color=auto -F";
+      lsl = "exa -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       l = "ls -lah --group-directories-first --color=auto";
       cls = "clear";
       c = "clear";
@@ -84,6 +84,7 @@ in {
       nixup = "pushd ~/projects/int/nix && nix flake update && nixswitch && popd";
       hm-gc = "nix-collect-garbage";
       hme = "code ~/projects/int/nix/";
+      hmu = "nixup";
 
       tree = "exa --tree --level 3 --all --group-directories-first --no-permissions --no-time";
       bottom = "btm";
