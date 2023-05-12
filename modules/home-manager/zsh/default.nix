@@ -75,7 +75,7 @@ in {
 
     shellAliases = {
       # ls = "ls --color=auto -F";
-      l = "ls -lah --group-directories-first";
+      l = "ls -lah --group-directories-first --color=auto";
       cls = "clear";
       c = "clear";
 
