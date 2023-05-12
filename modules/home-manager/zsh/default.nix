@@ -84,6 +84,10 @@ in {
       nixup = "pushd ~/projects/int/nix && nix flake update && nixswitch && popd";
       hm-gc = "nix-collect-garbage";
       hme = "code ~/projects/int/nix/";
+
+      tree = "exa --tree --level 3 --all --group-directories-first --no-permissions --no-time";
+      bottom = "btm";
+      br = "br --cmd ':open_preview'";
     };
 
     history = {

@@ -44,7 +44,7 @@ in {
   services.nix-daemon.enable = true;
   system.defaults = {
     dock = {
-      autohide = false;
+      autohide = true;
 
       ## only active windows in dock
       static-only = true;

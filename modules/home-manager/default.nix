@@ -19,7 +19,9 @@ in {
 
   home.packages = with pkgs; [
     ripgrep
+    du-dust
     fd
+    bottom
     curl
     less
     exa
@@ -56,6 +58,14 @@ in {
       extraConfig = ''
         IdentityAgent "${sockPath}"
       '';
+    };
+
+    broot = {
+      enable = true;
+
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+      enableZshIntegration = true;
     };
   };
 
