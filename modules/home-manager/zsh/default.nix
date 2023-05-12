@@ -81,7 +81,7 @@ in {
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
       nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.# && hm-gc";
-      nixup = "pushd ~/projects/int/nix && nix flake update && nixswitch && popd && hm-goc";
+      nixup = "pushd ~/projects/int/nix && nix flake update && nixswitch && popd";
       hm-gc = "nix-collect-garbage";
       hme = "code ~/projects/int/nix/";
     };
