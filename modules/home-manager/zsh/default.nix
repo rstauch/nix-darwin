@@ -74,8 +74,8 @@ in {
     autocd = true;
 
     shellAliases = {
-      lsl = "exa -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       l = "ls -lah --group-directories-first --color=auto";
+      lsl = "${pkgs.lib.getExe pkgs.exa} -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       cls = "clear";
       c = "clear";
 
@@ -83,11 +83,12 @@ in {
       nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.# && hm-gc";
       nixup = "pushd ~/projects/int/nix && nix flake update && nixswitch && popd";
       hm-gc = "nix-collect-garbage";
-      hme = "code ~/projects/int/nix/";
+      hme = "cd ~/projects/int/nix/ && code .";
+      dot = "cd ~/projects/int/dotfiles && code .";
       hmu = "nixup";
 
-      tree = "exa --tree --level 3 --all --group-directories-first --no-permissions --no-time";
-      bottom = "btm";
+      tree = "${pkgs.lib.getExe pkgs.exa} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
+      bottom = "${pkgs.lib.getExe pkgs.bottom}";
       br = "br --cmd ':open_preview'";
     };
 
