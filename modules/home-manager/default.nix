@@ -11,30 +11,33 @@
     inherit pkgs;
   };
 
-  imports = [java];
+  dev = import ./dev.nix {
+    inherit pkgs;
+  };
+
+  imports = [java dev];
 in {
   inherit imports;
 
   home.stateVersion = "22.11";
 
   home.packages = with pkgs; [
-    ripgrep
-    du-dust
-    fd
     bottom
+    du-dust
+    openssh
+    openssl
+    fd
+    tldr
+
+    ripgrep
+
     curl
     less
-    exa
 
     # see https://determinate.systems/posts/nix-home-env
     direnv
     # see https://determinate.systems/posts/nix-direnv
     nix-direnv
-
-    jq
-    just
-    openssl
-    openssh
 
     jetbrains.idea-ultimate
   ];

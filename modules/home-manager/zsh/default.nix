@@ -3,6 +3,7 @@ in {
   home.packages = [
     # fzf preview
     pkgs.lesspipe
+    pkgs.exa
   ];
 
   home.sessionVariables = {

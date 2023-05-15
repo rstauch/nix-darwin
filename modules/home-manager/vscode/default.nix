@@ -31,7 +31,6 @@ in {
     nixpkgs-fmt
     alejandra
     shfmt
-    shellcheck
   ];
 
   home.sessionVariables = {
