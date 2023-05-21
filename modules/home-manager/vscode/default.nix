@@ -5,6 +5,7 @@ in {
     enable = true;
     package = pkgs.vscode;
     userSettings = vscodeSettings.getUserSettings;
+    keybindings = import ./vscode_keybindings_mac.nix;
     extensions =
       with pkgs.vscode-extensions; [
         ms-azuretools.vscode-docker
