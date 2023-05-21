@@ -62,7 +62,7 @@ in {
       extraConfig = {
         core = {
           longpaths = true;
-          autocrlf = true;
+          autocrlf = "input";
           excludesfile = "/Users/rstauch/.gitignore_global";
         };
       };

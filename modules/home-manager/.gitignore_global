@@ -1,5 +1,9 @@
 .direnv
+
 # ignore dir specific files in ext/**
-ext/**/.envrc
-ext/**/.justfile
+# does not work!
+# projects/ext/**/.envrc
+# **/projects/ext/**/.envrc
+
+.justfile
 .idea
