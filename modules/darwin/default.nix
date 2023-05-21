@@ -182,6 +182,8 @@ in {
       # "mutify" # TODO: paid <- https://apps.apple.com/us/app/mutify/id1510206330?mt=12
       # "mic-drop" TODO: paid <- https://getmicdrop.com/
       "microsoft-teams"
+
+      "citrix-workspace"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus"];

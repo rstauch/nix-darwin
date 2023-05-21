@@ -31,24 +31,6 @@
   }
 
   {
-    key = "cmd+-";
-    command = "workbench.action.moveEditorToBelowGroup";
-  }
-  {
-    key = "cmd+v";
-    command = "workbench.action.moveEditorToBelowGroup";
-  }
-
-  {
-    key = "cmd+d";
-    command = "workbench.action.moveEditorToFirstGroup";
-  }
-  {
-    key = "cmd+x";
-    command = "workbench.action.closeActiveEditor";
-  }
-
-  {
     key = "cmd+up";
     command = "workbench.action.focusAboveGroup";
   }
@@ -111,6 +93,12 @@
   {
     key = "ctrl+r";
     command = "editor.action.startFindReplaceAction";
+    when = "editorFocus || editorIsOpen";
+  }
+
+  {
+    key = "ctrl+f";
+    command = "editor.action.nextMatchFindAction";
     when = "editorFocus || editorIsOpen";
   }
 ]
