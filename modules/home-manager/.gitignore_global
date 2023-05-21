@@ -1,0 +1,5 @@
+.direnv
+# ignore dir specific files in ext/**
+ext/**/.envrc
+ext/**/.justfile
+.idea

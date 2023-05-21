@@ -15,9 +15,13 @@
     inherit pkgs;
   };
 
+  k8s = import ./k8s.nix {
+    inherit pkgs;
+  };
+
   broot = import ./broot/broot.nix;
 
-  imports = [java dev broot];
+  imports = [java dev broot k8s];
 in {
   inherit imports;
 
@@ -55,6 +59,13 @@ in {
       enable = true;
       userName = pkgs.lib.mkForce "Stauch, R. (Robert)";
       userEmail = "robert.stauch@fluxdev.de";
+      extraConfig = {
+        core = {
+          longpaths = true;
+          autocrlf = true;
+          excludesfile = "/Users/rstauch/.gitignore_global";
+        };
+      };
     };
 
     ssh = {
@@ -81,4 +92,5 @@ in {
   home.file."Library/Application Support/iTerm2/DynamicProfiles/iterm2_profile.json".source = ./iterm2_profiles.json;
 
   home.file.".config/broot/verbs.hjson".source = ./broot/verbs.hjson;
+  home.file.".gitignore_global".source = ./.gitignore_global;
 }
