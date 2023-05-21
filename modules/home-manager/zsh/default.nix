@@ -79,6 +79,9 @@ in {
       lsl = "${pkgs.lib.getExe pkgs.exa} -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       cls = "clear";
       c = "clear";
+      b = "${pkgs.lib.getExe pkgs.bat}";
+      e = "${pkgs.lib.getExe pkgs.vscode}";
+      j = "${pkgs.lib.getExe pkgs.just}";
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
       nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.# && hm-gc";
@@ -142,7 +145,7 @@ in {
         # adb
         # aws
         # gcloud
-        # docker
+        "docker"
         # docker-compose ?
         # gitflow ?
       ];
