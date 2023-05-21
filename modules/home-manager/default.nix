@@ -15,7 +15,9 @@
     inherit pkgs;
   };
 
-  imports = [java dev];
+  broot = import ./broot/broot.nix;
+
+  imports = [java dev broot];
 in {
   inherit imports;
 
@@ -50,9 +52,8 @@ in {
 
   programs = {
     git = {
-      # TODO: ggf. commit signing aktivieren ?
       enable = true;
-      userName = "Robert Stauch";
+      userName = pkgs.lib.mkForce "Stauch, R. (Robert)";
       userEmail = "robert.stauch@fluxdev.de";
     };
 
@@ -78,4 +79,6 @@ in {
   };
 
   home.file."Library/Application Support/iTerm2/DynamicProfiles/iterm2_profile.json".source = ./iterm2_profiles.json;
+
+  home.file.".config/broot/verbs.hjson".source = ./broot/verbs.hjson;
 }
