@@ -24,6 +24,8 @@
   imports = [java dev broot k8s];
 in {
   inherit imports;
+  home.username = "rstauch";
+  home.homeDirectory = pkgs.lib.mkForce "/Users/rstauch";
 
   home.stateVersion = "22.11";
 

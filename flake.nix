@@ -30,11 +30,13 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.rstauch.imports = [
-              ./modules/home-manager
-              ./modules/home-manager/zsh
-              ./modules/home-manager/vscode
-            ];
+            users.rstauch = {
+              imports = [
+                ./modules/home-manager
+                ./modules/home-manager/zsh
+                ./modules/home-manager/vscode
+              ];
+            };
           };
           networking.hostName = "robert-air-m2";
         }

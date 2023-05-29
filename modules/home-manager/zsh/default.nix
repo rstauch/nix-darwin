@@ -80,15 +80,12 @@ in {
       cls = "clear";
       c = "clear";
       b = "${pkgs.lib.getExe pkgs.bat}";
-      e = "${pkgs.lib.getExe pkgs.vscode}";
       j = "${pkgs.lib.getExe pkgs.just}";
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
-      nixswitch = "darwin-rebuild switch --flake ~/projects/int/nix/.# && hm-gc";
-      nixup = "cd ~/projects/int/nix && git add . && nix flake update && nixswitch";
+      nixswitch = "darwin-rebuild switch --flake /Users/rstauch/projects/int/nix/.# && hm-gc";
+      nixup = "cd /Users/rstauch/projects/int/nix && git add . && nix flake update && nixswitch";
       hm-gc = "nix-collect-garbage";
-      hme = "cd ~/projects/int/nix/ && code .";
-      dot = "cd ~/projects/int/dotfiles && code .";
       hmu = "nixup";
 
       tree = "${pkgs.lib.getExe pkgs.exa} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
