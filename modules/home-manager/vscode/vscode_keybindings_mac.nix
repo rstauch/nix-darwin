@@ -15,7 +15,7 @@
     when = "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor";
   }
   {
-    key = "cmd+w";
+    key = "ctrl+w";
     command = "editor.action.toggleWordWrap";
   }
   {
