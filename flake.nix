@@ -1,7 +1,7 @@
 {
   description = "my minimal flake";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable"; # nixos-22.11
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     # Manages configs links things into your home directory
     home-manager.url = "github:nix-community/home-manager/master";
