@@ -157,6 +157,7 @@ in {
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
+      upgrade = true;
     };
     caskArgs.no_quarantine = true;
     global.brewfile = true;
@@ -186,6 +187,6 @@ in {
       "citrix-workspace"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
-    brews = ["jbang" "quarkus"];
+    brews = ["jbang" "quarkus" "spoof-mac"];
   };
 }
