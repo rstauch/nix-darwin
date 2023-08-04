@@ -11,7 +11,7 @@ in {
 
   getUserSettings = {
     # unklar ob terminal werte funktionieren
-    terminal.external.osxExec = pkgs.lib.getExe pkgs.iterm2;
+    terminal.external.osxExec = pkgs.lib.getBin pkgs.iterm2;
     terminal.explorerKind = "external";
 
     terminal.integrated.fontSize = 12;
@@ -63,9 +63,9 @@ in {
     "[nix]".editor.defaultFormatter = "kamadorueda.alejandra";
 
     nix.enableLanguageServer = true;
-    nix.serverPath = pkgs.lib.getExe pkgs.nil;
+    nix.serverPath = pkgs.lib.getBin pkgs.nil;
     nix.serverSettings.nil = {
-      formatting.command = [(pkgs.lib.getExe pkgs.alejandra)];
+      formatting.command = [(pkgs.lib.getBin pkgs.alejandra)];
     };
 
     cSpell.languageSettings = [
