@@ -29,7 +29,7 @@ in {
     ];
 
     systemPath = ["/opt/homebrew/bin"];
-    pathsToLink = ["/Applications"];
+    pathsToLink = ["/Applications" "/Applications/Nix Apps" "/Users/rstauch/Applications/Home Manager Apps"];
   };
 
   system.keyboard.enableKeyMapping = true;
