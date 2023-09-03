@@ -84,8 +84,10 @@ in {
       b = "${pkgs.lib.getBin pkgs.bat}";
       j = "${pkgs.lib.getBin pkgs.just}";
       e = "${pkgs.lib.getBin pkgs.vscode}";
-      hme = "cd /Users/rstauch/projects/int/nix/ && ${pkgs.lib.getBin pkgs.vscode} .";
-      dot = "cd /Users/rstauch/projects/int/dotfiles && ${pkgs.lib.getBin pkgs.vscode} .";
+      # hme = "cd /Users/rstauch/projects/int/nix/ && ${pkgs.lib.getBin pkgs.vscode} .";
+      hme = "cd /Users/rstauch/projects/int/nix/ && code .";
+      # dot = "cd /Users/rstauch/projects/int/dotfiles && ${pkgs.lib.getBin pkgs.vscode} .";
+      dot = "cd /Users/rstauch/projects/int/dotfiles && code .";
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
       nixswitch = "darwin-rebuild switch --flake /Users/rstauch/projects/int/nix/.# && hm-gc";
