@@ -3,7 +3,7 @@ in {
   home.packages = [
     # fzf preview
     pkgs.lesspipe
-    pkgs.exa
+    pkgs.eza
   ];
 
   home.sessionVariables = {
@@ -64,7 +64,7 @@ in {
       # https://github.com/Freed-Wu/fzf-tab-source
       zstyle ':fzf-tab:complete:*' fzf-min-height 1000
       # preview directory's content with exa when completing cd
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview '${pkgs.lib.getBin pkgs.exa} -1ha --color=always --group-directories-first $realpath'
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview '${pkgs.lib.getBin pkgs.eza}/bin/eza -1ha --color=always --group-directories-first $realpath'
       # enable preview with bat/cat/less
       zstyle ':fzf-tab:complete:(bat|cat|less):*' fzf-preview '${pkgs.lib.getBin pkgs.bat} --color=always --style=numbers --line-range=:1000 $realpath'
 
@@ -78,7 +78,7 @@ in {
 
     shellAliases = {
       l = "ls -lah --group-directories-first --color=auto";
-      lsl = "${pkgs.lib.getBin pkgs.exa} -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
+      lsl = "${pkgs.lib.getBin pkgs.eza}/bin/eza -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       cls = "clear";
       c = "clear";
       b = "${pkgs.lib.getBin pkgs.bat}";
@@ -95,7 +95,7 @@ in {
       hm-gc = "nix-collect-garbage";
       hmu = "nixup";
 
-      tree = "${pkgs.lib.getBin pkgs.exa} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
+      tree = "${pkgs.lib.getBin pkgs.eza}/bin/eza --tree --level 3 --all --group-directories-first --no-permissions --no-time";
       bottom = "${pkgs.lib.getBin pkgs.bottom}";
       br = "br --cmd ':open_preview'";
     };
