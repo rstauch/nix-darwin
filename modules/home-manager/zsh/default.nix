@@ -71,7 +71,7 @@ in {
       eval "$(direnv hook zsh)"
 
       # only relevant if iterm2 shell integration was triggered
-      # source "$HOME/.iterm2_shell_integration.zsh"
+      source "$HOME/.iterm2_shell_integration.zsh"
     '';
     sessionVariables = {DEFAULT_USER = "rstauch";};
     autocd = true;
