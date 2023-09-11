@@ -71,7 +71,7 @@ in {
       eval "$(direnv hook zsh)"
 
       # only relevant if iterm2 shell integration was triggered
-      source "$HOME/.iterm2_shell_integration.zsh"
+      # source "$HOME/.iterm2_shell_integration.zsh"
     '';
     sessionVariables = {DEFAULT_USER = "rstauch";};
     autocd = true;
@@ -93,7 +93,8 @@ in {
       nixswitch = "darwin-rebuild switch --flake /Users/rstauch/projects/int/nix/.# && hm-gc";
       nixup = "cd /Users/rstauch/projects/int/nix && git add . && hm-gc && nix flake update && nixswitch && git add .";
       hm-gc = "nix-collect-garbage";
-      hmu = "nixup";
+      hmu = "upd-darwin && nixup";
+      upd-darwin = "nix-channel --updatee darwin && darwin-rebuild changelog";
 
       tree = "${pkgs.lib.getBin pkgs.eza}/bin/eza --tree --level 3 --all --group-directories-first --no-permissions --no-time";
       bottom = "${pkgs.lib.getBin pkgs.bottom}";
