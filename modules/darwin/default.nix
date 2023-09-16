@@ -186,7 +186,7 @@ in {
 
       "citrix-workspace"
       "warp" # login required
-      "yed"
+      # "yed" #fails
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus" "spoof-mac"];
