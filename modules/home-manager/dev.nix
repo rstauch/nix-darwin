@@ -20,8 +20,6 @@ in {
     # A generic non-JVM producer and consumer for Apache Kafka, https://github.com/edenhill/kcat
     # kcat
 
-    yed
-
     dos2unix
 
     postman

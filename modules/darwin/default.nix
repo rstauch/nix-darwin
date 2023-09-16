@@ -185,7 +185,8 @@ in {
       "microsoft-teams"
 
       "citrix-workspace"
-      "warp" # login
+      "warp" # login required
+      "yed"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus" "spoof-mac"];

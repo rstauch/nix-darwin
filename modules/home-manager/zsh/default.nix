@@ -25,7 +25,7 @@ in {
     enableZshIntegration = true;
 
     fileWidgetOptions = [
-      "--height=70% --preview '${pkgs.lib.getBin pkgs.bat} --color=always --style=numbers --line-range=:1000 {}'"
+      "--height=70% --preview '${pkgs.lib.getExe pkgs.bat} --color=always --style=numbers --line-range=:1000 {}'"
     ];
   };
 
@@ -64,9 +64,9 @@ in {
       # https://github.com/Freed-Wu/fzf-tab-source
       zstyle ':fzf-tab:complete:*' fzf-min-height 1000
       # preview directory's content with exa when completing cd
-      zstyle ':fzf-tab:complete:cd:*' fzf-preview '${pkgs.lib.getBin pkgs.eza}/bin/eza -1ha --color=always --group-directories-first $realpath'
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview '${pkgs.lib.getExe pkgs.eza} -1ha --color=always --group-directories-first $realpath'
       # enable preview with bat/cat/less
-      zstyle ':fzf-tab:complete:(bat|cat|less):*' fzf-preview '${pkgs.lib.getBin pkgs.bat} --color=always --style=numbers --line-range=:1000 $realpath'
+      zstyle ':fzf-tab:complete:(bat|cat|less):*' fzf-preview '${pkgs.lib.getExe pkgs.bat} --color=always --style=numbers --line-range=:1000 $realpath'
 
       eval "$(direnv hook zsh)"
 
@@ -78,15 +78,15 @@ in {
 
     shellAliases = {
       l = "ls -lah --group-directories-first --color=auto";
-      lsl = "${pkgs.lib.getBin pkgs.eza}/bin/eza -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
+      lsl = "${pkgs.lib.getExe pkgs.eza} -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       cls = "clear";
       c = "clear";
-      b = "${pkgs.lib.getBin pkgs.bat}";
-      j = "${pkgs.lib.getBin pkgs.just}";
-      e = "${pkgs.lib.getBin pkgs.vscode}";
-      # hme = "cd /Users/rstauch/projects/int/nix/ && ${pkgs.lib.getBin pkgs.vscode} .";
+      b = "${pkgs.lib.getExe pkgs.bat}";
+      j = "${pkgs.lib.getExe pkgs.just}";
+      e = "${pkgs.lib.getExe pkgs.vscode}";
+      # hme = "cd /Users/rstauch/projects/int/nix/ && ${pkgs.lib.getExe pkgs.vscode} .";
       hme = "cd /Users/rstauch/projects/int/nix/ && code .";
-      # dot = "cd /Users/rstauch/projects/int/dotfiles && ${pkgs.lib.getBin pkgs.vscode} .";
+      # dot = "cd /Users/rstauch/projects/int/dotfiles && ${pkgs.lib.getExe pkgs.vscode} .";
       dot = "cd /Users/rstauch/projects/int/dotfiles && code .";
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
@@ -96,8 +96,8 @@ in {
       hmu = "upd-darwin && nixup";
       upd-darwin = "nix-channel --update darwin && darwin-rebuild changelog";
 
-      tree = "${pkgs.lib.getBin pkgs.eza}/bin/eza --tree --level 3 --all --group-directories-first --no-permissions --no-time";
-      bottom = "${pkgs.lib.getBin pkgs.bottom}";
+      tree = "${pkgs.lib.getExe pkgs.eza} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
+      bottom = "${pkgs.lib.getExe pkgs.bottom}";
       br = "br --cmd ':open_preview'";
     };
 
