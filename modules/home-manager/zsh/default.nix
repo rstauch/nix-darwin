@@ -77,7 +77,7 @@ in {
     autocd = true;
 
     shellAliases = {
-      l = "ls -lah --group-directories-first --color=auto";
+      l = "ls -lah --color=auto";
       lsl = "${pkgs.lib.getExe pkgs.eza} -la --group-directories-first --color=auto --no-user --no-permissions --header --no-time";
       cls = "clear";
       c = "clear";

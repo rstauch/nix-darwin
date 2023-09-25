@@ -23,5 +23,8 @@ in {
     dos2unix
 
     postman
+
+    nodejs-18_x
+    yarn
   ];
 }
