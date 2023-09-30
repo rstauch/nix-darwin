@@ -47,7 +47,7 @@ in {
     # see https://determinate.systems/posts/nix-direnv
     nix-direnv
 
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
   ];
   home.sessionVariables = {
     GIT_PAGER = "";
