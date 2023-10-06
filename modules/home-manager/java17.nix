@@ -9,7 +9,7 @@
   };
 
   # install graal vm for good measure (quarkus)
-  graalvm = pkgs."graalvm${jdkVersion}-ce";
+  graalvm = pkgs."graalvm-ce";
 in {
   home.sessionVariables = {
     # TODO: dynamisch gestalten (~ funktioniert nicht)
