@@ -176,9 +176,9 @@ in {
       "notion" # manual: login to project space
       "caffeine" # manual: settings
       # "betterdisplay" # TODO: requires PAID license
-      "disk-inventory-x"
+      # "disk-inventory-x"
       # "parallels" # mac store version ist beschränkt ?
-      "onedrive"
+      # "onedrive"
 
       # "mutify" # TODO: paid <- https://apps.apple.com/us/app/mutify/id1510206330?mt=12
       # "mic-drop" TODO: paid <- https://getmicdrop.com/
