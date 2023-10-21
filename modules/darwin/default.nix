@@ -163,6 +163,7 @@ in {
     global.brewfile = true;
     masApps = {
       "1Password for Safari" = 1569813296;
+      "Hue Essentials" = 1462943921;
     };
     casks = [
       "linearmouse" # manual: enable start automatically at login, config = /Users/rstauch/.config/linearmouse/linearmouse.json
