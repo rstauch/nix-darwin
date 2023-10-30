@@ -94,7 +94,7 @@ in {
       nixup = "cd /Users/rstauch/projects/int/nix && git add . && hm-gc && nix flake update && nixswitch && git add .";
       hm-gc = "nix-collect-garbage";
       hmu = "upd-darwin && nixup";
-      upd-darwin = "nix-channel --update darwin && darwin-rebuild changelog";
+      upd-darwin = "brew update && brew upgrade && nix-channel --update darwin && darwin-rebuild changelog";
 
       tree = "${pkgs.lib.getExe pkgs.eza} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
       bottom = "${pkgs.lib.getExe pkgs.bottom}";

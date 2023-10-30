@@ -189,7 +189,7 @@ in {
       "warp" # login required
       # "yed" #fails
       "postman"
-      "intellij-idea"
+      "intellij-idea" # mv to nix-unstable
       "calibre"
       "cryptomator"
       "google-drive"
