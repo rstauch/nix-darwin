@@ -194,6 +194,8 @@ in {
       "cryptomator"
       "google-drive"
       "libreoffice"
+      "signal"
+      "whatsapp"
     ];
     taps = ["homebrew/cask" "homebrew/cask-versions" "jbangdev/tap" "quarkusio/tap"];
     brews = ["jbang" "quarkus" "spoof-mac"];
