@@ -4,6 +4,7 @@ in {
     # fzf preview
     pkgs.lesspipe
     pkgs.eza
+    pkgs.mdcat
   ];
 
   home.sessionVariables = {
@@ -90,15 +91,19 @@ in {
       dot = "cd /Users/rstauch/projects/int/dotfiles && code .";
 
       # TODO: pfad dynamisch gestaltbar ? bzw. mit setup script koordinieren
-      nixswitch = "darwin-rebuild switch --flake /Users/rstauch/projects/int/nix/.# && hm-gc";
-      nixup = "cd /Users/rstauch/projects/int/nix && git add . && hm-gc && nix flake update && nixswitch && git add .";
+      nixswitch = "darwin-rebuild switch --flake /Users/rstauch/projects/int/nix/.# && hm-gc && refresh";
+      nixup = "cd /Users/rstauch/projects/int/nix && git add . && hm-gc && nix-channel --update && nix flake update && nixswitch && git add .";
       hm-gc = "nix-collect-garbage";
       hmu = "upd-darwin && nixup";
-      upd-darwin = "brew update && brew upgrade && nix-channel --update darwin && darwin-rebuild changelog";
+      upd-darwin = "brew update --force && brew upgrade --greedy && nix-channel --update darwin && darwin-rebuild changelog";
 
       tree = "${pkgs.lib.getExe pkgs.eza} --tree --level 3 --all --group-directories-first --no-permissions --no-time";
       bottom = "${pkgs.lib.getExe pkgs.bottom}";
       br = "br --cmd ':open_preview'";
+
+      md = "${pkgs.lib.getExe pkgs.glow}";
+      refresh = "source /Users/rstauch/.zshrc";
+      gu = "git fetch && git pull";
     };
 
     history = {
