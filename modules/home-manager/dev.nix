@@ -24,5 +24,8 @@ in {
 
     nodejs-18_x
     yarn
+
+    httpie
+    lazydocker
   ];
 }
