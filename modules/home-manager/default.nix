@@ -76,14 +76,6 @@ in {
         IdentityAgent "${sockPath}"
       '';
     };
-
-    broot = {
-      enable = true;
-
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
-    };
   };
 
   home.file.sock = {
