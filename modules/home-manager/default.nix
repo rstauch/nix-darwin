@@ -19,9 +19,9 @@
     inherit pkgs;
   };
 
-  # broot = import ./broot/broot.nix;
+  broot = import ./broot/broot.nix;
 
-  imports = [java dev k8s];
+  imports = [java dev k8s broot];
 in {
   inherit imports;
   home.username = "rstauch";

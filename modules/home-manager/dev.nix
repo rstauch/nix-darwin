@@ -5,6 +5,8 @@ in {
     just
     shellcheck
 
+    spotify
+
     # Make JSON greppable, https://github.com/tomnomnom/gron
     gron
 
