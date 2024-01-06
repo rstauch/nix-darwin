@@ -179,7 +179,8 @@ in {
       # "betterdisplay" # TODO: requires PAID license
       # "disk-inventory-x"
       # "parallels" # mac store version ist beschränkt ?
-      # "onedrive"
+      "onedrive" # login mit rs account
+      "obsidian"
 
       # "mutify" # TODO: paid <- https://apps.apple.com/us/app/mutify/id1510206330?mt=12
       # "mic-drop" TODO: paid <- https://getmicdrop.com/
