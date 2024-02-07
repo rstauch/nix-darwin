@@ -26,6 +26,7 @@ in {
       coreutils
       iterm2
       wget
+      kind
     ];
 
     systemPath = ["/opt/homebrew/bin"];
