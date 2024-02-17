@@ -103,7 +103,7 @@ in {
 
       md = "${pkgs.lib.getExe pkgs.glow}";
       refresh = "source /Users/rstauch/.zshrc";
-      gu = "git fetch && git pull";
+      gl = "git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all -n 15";
     };
 
     history = {
@@ -133,7 +133,7 @@ in {
       enable = true;
       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
       plugins = [
-        "git"
+        # "git"
 
         "sudo" # press esc twice.
 
